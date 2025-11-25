@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // <--- THIS IS THE MAGIC LINE
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,29 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        oxford: "#0F172A",
-        gold: "#C5A059",
-        slate: {
-          light: "#F8FAFC",
-          gray: "#64748B",
-          dark: "#020617", // New super dark color for background
-          card: "#1E293B"  // New dark color for cards
-        },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'hero-pattern': "url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop')",
+      },
+      fontFamily: {
+        mono: ['var(--font-geist-mono)', 'monospace'],
       },
       animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'fade-up': 'fadeUp 0.8s ease-out forwards',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        }
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       }
     },
   },
